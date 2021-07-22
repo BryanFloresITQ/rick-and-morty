@@ -1,1 +1,47 @@
-<p>character works!</p>
+<div class="flex-col bg-gray-200">
+    <div>
+        <div class="text-center text-green-700 text-opacity-75 text-4xl font-serif py-8">
+            <h1>{{character.name}}</h1>
+        </div>
+        <div class = "flex flex flex-row border-2 border-green-500 justify-center mx-96 my-8 py-11 shadow-2xl content-center rounded-3xl">
+
+            <div>
+                <img src="{{character.image}}" alt=""  width="300px" height="300px" class=" mr-16 rounded-full">
+            </div>
+
+            <div>
+                <p>Estado: {{character.status}}</p>
+                <p>Especie: {{character.species}}</p>
+                <p>Tipo: {{character.type}}</p>
+                <p>Genero: {{character.gender}}</p>
+                <p>Fecha de creacion: {{character.created}}</p>
+            </div>
+
+        </div>
+    </div>
+   <div class="text-center w-screen flex-col">
+
+            <div> <h2 class="text-center text-green-700 text-opacity-75 text-4xl font-serif py-8">Episodios</h2> </div>
+
+            <div *ngFor="let item of Episodios" class="m-8 shadow-2xl content-center rounded-3xl">
+                <ul>
+                    <li>
+                        <p class="animate-pulse m-8 font-serif text-4xl italic text-blue-500">Nombre Episodio:{{item.name}}</p>
+                    </li> 
+                    <li>
+                        <p>Fecha: {{item.air_date}}</p>
+                    </li>
+                    <li>
+                        <p>Episodio N°: {{item.episode}}</p>
+                    </li>
+                    <li>
+                        <p>Creado: {{item.created}}</p>
+                    </li>
+                    <li class="border-2 transition duration-300 ease-in-out transform hover:scale-110 motion-reduce:transform-none rounded-full py-2 px-8 mx-20 mt-10 bg-green-500 text-white">
+                        <button routerLink="/episode/{{item.id}}">Ver Episodio</button>
+                    </li>
+                </ul>
+            </div>
+
+    </div> 
+</div>
